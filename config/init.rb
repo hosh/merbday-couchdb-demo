@@ -16,7 +16,6 @@ Merb::Config.use do |c|
 end
  
 Merb::BootLoader.before_app_loads do
-  require 'couchrest' # Problems with gems
 end
  
 Merb::BootLoader.after_app_loads do
