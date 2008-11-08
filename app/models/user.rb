@@ -14,4 +14,8 @@ class User
   property :id,     Serial
   property :login,  String
   
+  def profiles
+    Profile.by_user_id_and_updated_at :startkey => [self.id], :endkey => [self.id,{}]
+  end
+
 end

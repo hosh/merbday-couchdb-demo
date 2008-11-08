@@ -4,6 +4,9 @@ class Profile < CouchRest::Model
   key_reader :slug, :created_at, :updated_at
   timestamps!
 
-  key_accessor :name
+  key_accessor :name, :user_id
+
+  view_by :user_id, :updated_at
+  view_by :user_id
 
 end
