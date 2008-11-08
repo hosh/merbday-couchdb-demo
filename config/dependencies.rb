@@ -23,3 +23,4 @@ dependency "dm-types", dm_gems_version
 dependency "dm-validations", dm_gems_version  
 
 dependency "merb-jquery", ">=0.9.8"
+#dependency "couchrest"
