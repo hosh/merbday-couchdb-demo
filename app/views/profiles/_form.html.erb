@@ -1,0 +1,10 @@
+<% throw_content :jquery do %>
+  $(function() {
+    $('input').hide().fadeIn('slow');
+  });
+<% end %>
+
+<div> <%= text_field :label => 'Name', :name => "profile[name]", :value => @profile.name %></div>
+<div> <%= text_field :label => 'Email', :name => "profile[contact_info][email]", :value => @profile.all_contacts['email'] %></div>
+<%= submit 'Submit' %>
+

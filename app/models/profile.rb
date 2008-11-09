@@ -27,4 +27,11 @@ class Profile < CouchRest::Model
   cast :contact_info, :as => 'ContactInfo'
   cast :skills, :as => ['Skill']
 
+  #key_accessor :contact_info
+
+
+  def all_contacts
+    self['contact_info'] || ContactInfo.new
+  end
+
 end
