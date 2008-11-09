@@ -1,18 +1,33 @@
 <h2>Profile for <%=h @profile.name %></h2>
 
-<ul>
-  <li class="profile-name"><span>Name:</span> <%=h @profile.name %></li>
-  <li class="profile-contact-info"><span>Contact:</span>
-    <ul>
-      <li><span>Phone:</span> <%=h @profile['contact_info'].phone %></li>
-      <li><span>Email:</span> <%=h @profile['contact_info'].email %></li>
-    </ul>
-  </li>
-  <li class="profile-skills"><span>Skills:</span>
-    <ul>
-      <%- @profile['skills'].each do |skill| -%>
-        <li><%= skill.skill %> | <%= skill.expertise %> | <%= time_ago_in_words(skill.skilled_since) %></li>
-      <%- end -%>
-    </ul>
-  </li>
-</ul>
+<div class="profile">
+  <ul>
+    <li class="profile-name"><span>Name:</span> <%=h @profile.name %></li>
+    <li class="profile-contact-info"><span>Contact:</span>
+      <ul>
+        <li><span>Phone:</span> <%=h @profile['contact_info'].phone %></li>
+        <li><span>Email:</span> <%=h @profile['contact_info'].email %></li>
+      </ul>
+    </li>
+    <li class="profile-skills"><span>Skills:</span>
+      <table>
+        <thead>
+          <tr>
+          <th>Skill</th>
+          <th>Expertise</th>
+          <th>Since</th>
+        </tr>
+        </thead>
+        <tbody>
+          <%- @profile['skills'].each do |skill| -%>
+            <tr>
+              <td><%= skill.skill %></td> 
+              <td><%= skill.expertise %></td>  
+              <td><%= time_ago_in_words(skill.skilled_since) %></td>
+            </tr>
+          <%- end -%>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+</div>
