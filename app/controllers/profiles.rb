@@ -1,5 +1,5 @@
 class Profiles < Application
-  # provides :xml, :yaml, :js
+  provides :json
 
   def index
     @profiles = Profile.all

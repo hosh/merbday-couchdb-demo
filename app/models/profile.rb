@@ -3,7 +3,13 @@ class ContactInfo < CouchRest::Model
 end
 
 class Skill < CouchRest::Model
-  key_accessor :skill, :expertise, :skilled_since
+  key_accessor :skill, :expertise
+
+  key_writer :skilled_since 
+  def skilled_since
+    Time.parse(self['skilled_since'])
+  end
+
 end
 
 class Profile < CouchRest::Model
