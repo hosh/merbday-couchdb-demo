@@ -6,8 +6,9 @@
 
 <% throw_content :jquery do %>
   $(function() {
-    $('profile-submit').click(function() {
-      $('#results').html('<pre>'+$('form#profile-form').form_to_json(false)+'</pre>')
+    $('form#profile-form :submit').click(function() {
+      $('#results').html('<pre>JSON: '+$('form#profile-form').form_to_json(false)+'</pre>');
+      return false;
     });
   });
 <% end %>
