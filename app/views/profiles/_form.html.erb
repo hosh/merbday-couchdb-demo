@@ -1,10 +1,19 @@
+<% throw_content :javascript do %>
+  <script src="/javascripts/json2.js"  type="text/javascript" charset="utf-8"></script>
+  <script src="/javascripts/jquery.form.js"  type="text/javascript" charset="utf-8"></script>
+  <script src="/javascripts/jquery.json-form.js"  type="text/javascript" charset="utf-8"></script>
+<% end %>
+
 <% throw_content :jquery do %>
   $(function() {
-    $('input').hide().fadeIn('slow');
+    $('profile-submit').click(function() {
+      $('#results').html('<pre>'+$('form#profile-form').form_to_json(false)+'</pre>')
+    });
   });
 <% end %>
 
-<div> <%= text_field :label => 'Name', :name => "profile[name]", :value => @profile.name %></div>
-<div> <%= text_field :label => 'Email', :name => "profile[contact_info][email]", :value => @profile.all_contacts['email'] %></div>
-<%= submit 'Submit' %>
+<div> <%= text_field :label => 'Name', :name => "profile[name]", :value => @profile.name %></div> 
+<div> <%= text_field :label => 'Email', :name => "profile[contact_info][email]", :value => @profile.all_contacts['email'] %></div> 
+<%= submit 'Submit', :id => 'profile-submit' %>
 
+<div id="results"></div>
