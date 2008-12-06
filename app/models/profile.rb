@@ -1,5 +1,5 @@
 class Profile < CouchRest::Model
-  use_database CouchRest.database!('http://couchdb1.isshen.net:5984/profiles-test')
+  use_database CouchRest.database!(CURRENT_DB)
 
   class ContactInfo < CouchRest::Model
     key_accessor :phone, :email, :twitter

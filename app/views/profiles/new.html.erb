@@ -1,4 +1,5 @@
 <h2>New Profile</h2>
+<pre>curl -X POST -H 'Content-Type: application/json' <%= link_to_post_profile %> -d '<%=@profile.to_json %>' </pre>
 
 <%= form :action => url(:controller => 'profiles', :action => 'create'), :id => 'profile-form' do %>
   <%= partial 'form' %>

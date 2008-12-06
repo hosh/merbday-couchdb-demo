@@ -122,6 +122,12 @@ a:hover {
   margin-left: 3.0em;
 }
 
+pre {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  white-space: normal;
+}
+
 
 /* Profiles */
 div.profile li {

@@ -1,9 +1,10 @@
 <h2><%= link_to 'New Profile', url(:new_profile) %></h2>
 <h2>All Profiles</h2>
+<pre>curl -X GET <%= link_to_all_posts %></pre>
 
 <ul>
 <%- @profiles.each do |profile| -%>
-  <li><tt><%=h profile.id %></tt><%= link_to profile.name, url(:profile, profile.id) %></li>
+  <li><tt><%=link_to profile.id, link_to_couchdb(profile) %></tt><%= link_to profile.name, url(:profile, profile.id) %></li>
 <%- end -%>
 </ul>
 

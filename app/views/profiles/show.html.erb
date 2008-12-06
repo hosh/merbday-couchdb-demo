@@ -1,7 +1,7 @@
 <h2>Profile for <%=h @profile.name %></h2>
+<pre>curl -X GET <%= link_to_get_profile(@profile) %></pre>
 
 <%= link_to 'Edit', url(:edit_profile, @profile.id) %>
-
 <div class="profile">
   <ul>
     <li class="profile-name"><span>Name:</span> <%=h @profile.name %></li>

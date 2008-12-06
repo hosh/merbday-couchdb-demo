@@ -16,6 +16,10 @@ Merb::Config.use do |c|
 end
  
 Merb::BootLoader.before_app_loads do
+  COUCHDB_SOURCES = [ "http://couchdb1.isshen.net:5984", "http://couchdb2.isshen.net:5984" ]
+  CURRENT_SOURCE = COUCHDB_SOURCES[rand(COUCHDB_SOURCES.length)]
+  COUCHDB = "profiles-test"
+  CURRENT_DB = CURRENT_SOURCE / COUCHDB
 end
  
 Merb::BootLoader.after_app_loads do
