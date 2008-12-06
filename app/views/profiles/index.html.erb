@@ -3,7 +3,7 @@
 
 <ul>
 <%- @profiles.each do |profile| -%>
-  <li><%= link_to profile.name, url(:profile, profile.id) %></li>
+  <li><tt><%=h profile.id %></tt><%= link_to profile.name, url(:profile, profile.id) %></li>
 <%- end -%>
 </ul>
 

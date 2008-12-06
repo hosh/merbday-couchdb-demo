@@ -39,6 +39,10 @@ hr {
   width: 100%;
   text-align: left;
 }
+h1, h2, h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 h1 {
   font-size: 28px;
   background-color: #fff;
@@ -85,12 +89,13 @@ p {
   padding: 5px;
 }
 a {
-  color: #4d9b12;
+  color: #006;
   background-color: #fff;
   text-decoration: none;
+  font-weight: bold;
 }
 a:hover {
-  color: #4d9b12;
+  color: #006;
   background-color: #fff;
   text-decoration: underline;
 }
@@ -134,6 +139,10 @@ div.profile table th {
 }
 div.profile table td {
   padding: 5px;
+}
+
+tt {
+  padding-right: 10px;
 }
 
 
