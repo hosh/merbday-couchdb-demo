@@ -8,13 +8,16 @@
   $(function() {
     $('form#profile-form :submit').click(function() {
       $('#results').html('<pre>JSON: '+$('form#profile-form').form_to_json(false)+'</pre>');
-      return false;
+      return true;
     });
   });
 <% end %>
 
 <div> <%= text_field :label => 'Name', :name => "profile[name]", :value => @profile.name %></div> 
 <div> <%= text_field :label => 'Email', :name => "profile[contact_info][email]", :value => @profile.all_contacts['email'] %></div> 
+<div> <%= text_field :label => 'Phone', :name => "profile[contact_info][phone]", :value => @profile.all_contacts['email'] %></div> 
+<div> <%= text_field :label => 'Twitter', :name => "profile[contact_info][twitter]", :value => @profile.all_contacts['email'] %></div> 
+<div> <%= text_field :label => 'Gtalk', :name => "profile[contact_info][gtalk]", :value => @profile.all_contacts['email'] %></div> 
 <%= submit 'Submit', :id => 'profile-submit' %>
 
 <div id="results"></div>

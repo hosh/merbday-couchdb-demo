@@ -5,8 +5,9 @@
     <li class="profile-name"><span>Name:</span> <%=h @profile.name %></li>
     <li class="profile-contact-info"><span>Contact:</span>
       <ul>
-        <li><span>Phone:</span> <%=h @profile['contact_info'].phone %></li>
-        <li><span>Email:</span> <%=h @profile['contact_info'].email %></li>
+        <%- @profile['contact_info'].each_pair do |contact, info| %>
+          <li><span><%=h contact %>:</span> <%=h info %></li>
+        <%- end if @profile['contact_info'] %>
       </ul>
     </li>
     <li class="profile-skills"><span>Skills:</span>
@@ -25,7 +26,7 @@
               <td><%= skill.expertise %></td>  
               <td><%= time_ago_in_words(skill.skilled_since) %></td>
             </tr>
-          <%- end -%>
+          <%- end if @profile['skills']-%>
         </tbody>
       </table>
     </li>

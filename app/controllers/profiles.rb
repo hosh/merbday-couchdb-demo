@@ -28,7 +28,8 @@ class Profiles < Application
   def create(profile)
     @profile = Profile.new(profile)
     if @profile.save
-      redirect resource(@profile), :message => {:notice => "Profile was successfully created"}
+      # Should use resource(@profile) here, but CouchRest 0.9.15 doesn't interact with Merb like that
+      redirect url(:profile, @profile.id), :message => {:notice => "Profile was successfully created"}
     else
       message[:error] = "Profile failed to be created"
       render :new
