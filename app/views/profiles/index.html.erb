@@ -8,10 +8,10 @@
 <%- end -%>
 </ul>
 
-<h2>Replicate to <%=h OTHER_DB %></h2>
+<h2>Push to <%=h OTHER_DB %></h2>
 <pre>curl -X POST -H 'Content-Type: application/json' <%= link_to_replicate %> -d '<%= Profile.replicate %>'</pre>
 
-<h2>Replicate from <%=h OTHER_DB %></h2>
+<h2>Pull from <%=h OTHER_DB %></h2>
 <pre>curl -X POST -H 'Content-Type: application/json' <%= link_to_replicate %> -d '<%= Profile.replicate({:source => COUCHDB, :target => OTHER_DB}) %>'</pre>
     
 
