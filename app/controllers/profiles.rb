@@ -39,8 +39,11 @@ class Profiles < Application
   def update(id, profile)
     @profile = Profile.get(id)
     raise NotFound unless @profile
+    # Kludge. What really should happen is Profile accept an arbitrary json that updates everything
+    @profile['contact_info'] = profile.delete('contact_info') if profile['contact_info']
+    @profile['skills'] = profile.delete('skills') if profile['skills']
     if @profile.update_attributes(profile)
-       redirect resource(@profile)
+       redirect url(:profile, @profile.id)
     else
       display @profile, :edit
     end
