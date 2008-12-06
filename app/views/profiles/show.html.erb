@@ -1,5 +1,7 @@
 <h2>Profile for <%=h @profile.name %></h2>
 
+<%= link_to 'Edit', url(:edit_profile, @profile.id) %>
+
 <div class="profile">
   <ul>
     <li class="profile-name"><span>Name:</span> <%=h @profile.name %></li>
@@ -32,3 +34,5 @@
     </li>
   </ul>
 </div>
+
+<%= link_to 'Back', url(:profiles) %>
