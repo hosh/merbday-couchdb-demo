@@ -20,6 +20,7 @@ Merb::BootLoader.before_app_loads do
   CURRENT_SOURCE = COUCHDB_SOURCES[rand(COUCHDB_SOURCES.length)]
   COUCHDB = "profiles-test"
   CURRENT_DB = CURRENT_SOURCE / COUCHDB
+  OTHER_DB = (COUCHDB_SOURCES - [ CURRENT_SOURCE ]).first / COUCHDB
 end
  
 Merb::BootLoader.after_app_loads do

@@ -33,4 +33,8 @@ class Profile < CouchRest::Model
     self['contact_info'] || ContactInfo.new
   end
 
+  def self.replicate(opt = {:source => COUCHDB, :target => OTHER_DB})
+    opt.to_json
+  end
+
 end

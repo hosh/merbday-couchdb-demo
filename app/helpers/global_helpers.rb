@@ -15,5 +15,9 @@ module Merb
     def link_to_all_posts
       CURRENT_SOURCE / COUCHDB / '_all_docs'
     end
+
+    def link_to_replicate
+      CURRENT_SOURCE / '_replicate'
+    end
   end
 end
